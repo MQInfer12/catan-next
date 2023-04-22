@@ -2,6 +2,13 @@
   height: 100dvh;
   background-color: #0967A6;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.rowContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

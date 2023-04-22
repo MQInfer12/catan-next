@@ -1,24 +1,9 @@
-import Page from '@/components/game'
-import DebugBar from '@/components/game/debugBar';
-import { useEffect, useState } from 'react'
+import Page from '@/components/game/page'
+import DebugBar from '@/components/game/debugBar/debugBar';
+import { useToggleKeyCombination } from '@/hooks/useToggleKeyCombination';
 
 const Game = () => {
-  const [keysPressed, setKeysPressed] = useState<string[]>([]);
-  const [showDebugBar, setShowDebugBar] = useState<boolean>(false);
-
-  useEffect(() => { 
-    document.onkeydown = (e) => {
-      setKeysPressed(old => Array.from(new Set([...old, e.key])));
-    }
-    document.onkeyup = (e) => {
-      setKeysPressed(old => old.filter(key => key != e.key));
-    }
-  }, []);
-
-  if(keysPressed.includes("A") && keysPressed.includes("Shift")) {
-    setKeysPressed([]);
-    setShowDebugBar(old => !old);
-  }
+  const showDebugBar = useToggleKeyCombination(["shift", "d"]);
 
   return (
     <>

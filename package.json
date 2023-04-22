@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "18.15.13",
-    "@types/react": "18.0.38",
-    "@types/react-dom": "18.0.11",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -19,6 +16,9 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
+    "@types/node": "18.15.13",
+    "@types/react": "^18.0.38",
+    "@types/react-dom": "18.0.11",
     "sass": "^1.62.0"
   }
 }
